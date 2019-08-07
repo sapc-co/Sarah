@@ -10,3 +10,9 @@ langs = {
     "espanol": "es",
 	"esperanto": "eo"
 }
+
+intro_options = [
+    "Hi, My me is Sarah and I'm here to help you",
+    "Hi there, What can do for you?",
+    "Hello, I'm here to help you"
+]

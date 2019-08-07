@@ -14,7 +14,7 @@ from emoji import emojize
 
 class STranslator():
 
-    def Translate(Content, Dest) :
+    def Translate(self, Content, Dest) :
         translator = Translator()
         try :
             translations = translator.translate([Content], src="auto", dest=Dest)
@@ -29,7 +29,7 @@ class STranslator():
 
 class SWebscraper():
 
-    def Piratebay(asked):
+    def Piratebay(self, asked):
         url = "https://247tpb.club/s/?q="+asked+"&page=0&orderby=99"
         try :
             page = requests.get(url) #Downloading That url's main html page
@@ -56,7 +56,7 @@ class SWebscraper():
         except :
             return ("Ooops connection failed \nMaybe you need to check your network connection")
 
-    def Wikipedia(subject, language):
+    def Wikipedia(self, subject, language):
         pass
 
 
@@ -86,5 +86,7 @@ class SEmoji():
             return emojize(":snowflake:")
         elif emoname == "thunder":
             return emojize(":zap:")
+        elif emoname == "v":
+            return emojize(":v:")
         
 
