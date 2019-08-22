@@ -2,3 +2,4 @@ __pycache__
 *.pyc
 __pycache__/Data.cpython-37.pyc
 __pycache__/Modules.cpython-37.pyc
+.venv
