@@ -8,17 +8,22 @@ _emoji = SEmoji.Emoji(choice(intro_emoji))
 print("{} {}".format(intro, _emoji))
 print("")
 
-while True:
-    inp = input()
+try :
+    while True:
+        inp = input()
 
-    if inp is "" :
-        pass
+        if inp is "" :
+            pass
 
-    elif inp[1:9] == "ranslate" :
-        Content = inp[10:]
-        Dest = input("To what language ? ")
-        for lang in langs.keys() :
-            if lang in Dest :
-                Dest = langs[lang]
-        print(STranslator.Translate(Content, Dest))
+        elif inp[1:9] == "ranslate" :
+            Content = inp[10:]
+            Dest = input("To what language ? ")
+            for lang in langs.keys() :
+                if lang in Dest :
+                    Dest = langs[lang]
+            print(STranslator.Translate(Content, Dest))
+
+except (KeyboardInterrupt):
+    print("\nClosing ...")
+    exit()
     
