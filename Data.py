@@ -12,7 +12,7 @@ langs = {
 }
 
 intro_options = [
-    "Hi, My me is Sarah and I'm here to help you",
-    "Hi there, What can do for you?",
+    "Hi, I'm Sarah and I'm here to help you",
+    "Hi there, What can I do for you?",
     "Hello, I'm here to help you"
 ]

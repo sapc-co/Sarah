@@ -1,20 +1,19 @@
 """ 
     This is the Modeles for the the main file of Sarah
-    This Doctype needs changes
+    #TODO: This Doctype needs changes
 """ 
 
 #imports :
 from googletrans import Translator
 from Data import *
 from webbrowser import open_new_tab as ont
-import requests 
 from bs4 import BeautifulSoup as bs
 from emoji import emojize
-
+import requests 
 
 class STranslator():
 
-    def Translate(self, Content, Dest) :
+    def Translate(Content, Dest) :
         translator = Translator()
         try :
             translations = translator.translate([Content], src="auto", dest=Dest)
@@ -29,7 +28,7 @@ class STranslator():
 
 class SWebscraper():
 
-    def Piratebay(self, asked):
+    def Piratebay(asked):
         url = "https://247tpb.club/s/?q="+asked+"&page=0&orderby=99"
         try :
             page = requests.get(url) #Downloading That url's main html page
@@ -63,30 +62,35 @@ class SWebscraper():
 class SEmoji():
     def Emoji(emoname):
         if emoname == "fuck":
-            return emojize(":middle_finger:")
+            return emojize(":middle_finger:") #🖕
         elif emoname == "thumb":
-            return emojize(":+1:")
+            return emojize(":thumbs_up:") #👍
         elif emoname == "smile":
-            return emojize(":simple_smile:")        
+            return emojize(":slightly_smiling_face:") #🙂   
         elif emoname == "wink":
-            return emojize(":wink:")        
+            return emojize(":winking_face:") #😉
         elif emoname == "sad":
-            return emojize(":pensive:")        
+            return emojize(":pensive_face:") #😔
         elif emoname == "heart":
-            return emojize(":heart:")        
+            return emojize(":red_heart:") #💖
         elif emoname == "question":
-            return emojize(":questino:")        
+            return emojize(":question_mark:") #❓
         elif emoname == "sleep":
-            return emojize(":zzz:")
+            return emojize(":zzz:") #💤
         elif emoname == "sun":
-            return emojize(":sunny:")   
-        elif emoname == "cloud":
-            return emojize(":cloud:")   
+            return emojize(":sun_with_face:") #🌞
+        elif emoname == "RLcloud":
+            return emojize(":cloud_with_lightning_and_rain:") #⛈
+        elif emoname == "Rcloud":
+            return emojize(":cloud_with_rain:") #🌧
+        elif emoname == "Scloud":
+            return emojize(":sun_behind_cloud:") #⛅
+        elif emoname == "Lcloud":
+            return emojize(":cloud_with_lightning:") #🌩
         elif emoname == "snow":
-            return emojize(":snowflake:")
+            return emojize(":snowflake:") #❄
         elif emoname == "thunder":
-            return emojize(":zap:")
+            return emojize(":high_voltage:") #⚡
         elif emoname == "v":
-            return emojize(":v:")
+            return emojize(":victory_hand:") #✌️
         
-
