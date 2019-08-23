@@ -1,1 +1,1 @@
-TDL = "farsi" #Translation Dest Default Language
+TDL = "esperanto" #Translation Dest Default Language

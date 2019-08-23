@@ -6,22 +6,22 @@ from Setting import *
 
 intro = choice(intro_options)
 intro_emoji = ["wink", "v", "smile"]
-_emoji = SEmoji.Emoji(choice(intro_emoji))
-print("{} {}".format(intro, _emoji))
+_emoji = SEmoji.Emoji(choice(intro_emoji)) #making a random emoji
+print("{} {}".format(intro, _emoji)) #introducing to user
 print("")
 
 try :
     while True:
-        inp = input()
+        inp = input("~> ")
 
-        if inp is "" :
+        if inp is "" : # if 
             pass
 
         elif inp[1:9] == "ranslate" :
             Content = inp[10:]
-            Dest = input("To what language? Leave empty to use Default({}) ".format(TDL))
+            Dest = input("To what language? Leave empty for using the default({}) ".format(TDL))
             if Dest == "" :
-                Dest = TDL
+                Dest = langs[TDL]
             else :
                 for lang in langs.keys() :
                     if lang in Dest :
