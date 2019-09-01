@@ -1,6 +1,6 @@
 """ 
-    This is the Modeles for the the main file of Sarah
-    #TODO: This Doctype needs changes
+This is the Modeles for the the main file of Sarah
+#TODO: This Doctype needs changes
 """ 
 
 #imports :
@@ -11,31 +11,28 @@ from bs4 import BeautifulSoup as bs
 from emoji import emojize
 import requests 
 
-class STranslator():
-
+class STranslator:
     def Translate(Content, Dest) :
         translator = Translator()
         try :
             translations = translator.translate([Content], src="auto", dest=Dest)
             for translation in translations :
                 if Dest == "fa" or Dest == "ar" :           
-                    return (translation.origin + " -> " + translation.text[::-1])
-                else :
-                    return (translation.origin + " -> " + translation.text)
+                    return (translation.origin + " -> " + translation.text[::-1])                                                                                   
+            else :
+                return (translation.origin + " -> " + translation.text)
         except :
             return ("Ooops connection failed \nMaybe you need to check your network connection") 
 
 
-class SWebscraper():
-
+class SWebscraper:
     def Piratebay(asked):
-        url = "https://247tpb.club/s/?q="+asked+"&page=0&orderby=99"
+        url = "https://247tpb.club/s/?q={}&page=0&orderby=99".format(asked)
         try :
             page = requests.get(url) #Downloading That url's main html page
             page = page.content #extracting
             soup = bs(page, "html.parser") #making a valid html code
             link = soup.find(class_="detLink") #finding the first link
-
             if link != None :
                 href = link['href']
                 url = "https://247tpb.club"+href
@@ -51,13 +48,8 @@ class SWebscraper():
                 return magnet
             else :
                 return ("Coudn't find it in Pirate Bay")
-        
         except :
             return ("Ooops connection failed \nMaybe you need to check your network connection")
-
-    def Wikipedia(self, subject, language):
-        pass
-
 
 class SEmoji():
     def Emoji(emoname):
@@ -93,4 +85,3 @@ class SEmoji():
             return emojize(":high_voltage:") #⚡
         elif emoname == "v":
             return emojize(":victory_hand:") #✌️
-        

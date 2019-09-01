@@ -1,14 +1,14 @@
 from Modules import STranslator, SWebscraper, SEmoji
-from Data import intro_options, langs
+from Data import IntroOptions, langs
 from random import choice
 from Setting import *
 
 
-intro = choice(intro_options)
+intro = choice(IntroOptions)
 intro_emoji = ["wink", "v", "smile"]
 _emoji = SEmoji.Emoji(choice(intro_emoji)) #making a random emoji
 print("{} {}".format(intro, _emoji)) #introducing to user
-print("")
+#print("")
 
 try :
     while True:
@@ -19,7 +19,7 @@ try :
 
         elif inp[1:9] == "ranslate" :
             Content = inp[10:]
-            Dest = input("To what language? Leave empty for using the default({}) ".format(TDL))
+            Dest = input("To what language? Leave empty for using the default ({}) ".format(TDL))
             if Dest == "" :
                 Dest = langs[TDL]
             else :
@@ -31,4 +31,6 @@ try :
 except (KeyboardInterrupt):
     print("\nClosing ...")
     exit()
-    
+
+#tars nadare ke by jadi (my teacher)
+#meaning : No fear

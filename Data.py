@@ -1,4 +1,7 @@
+from Setting import MainName
+
 langs = {
+    # NONCAPITALS
     "english": "en",
     "farsi": "fa",
     "persian": "fa",
@@ -8,11 +11,24 @@ langs = {
     "korean": "ko",
     "spanish": "es",
     "espanol": "es",
-	"esperanto": "eo"
+	"esperanto": "eo",
+    #CAPITALS
+    "English": "en",
+    "Farsi": "fa",
+    "Persian": "fa",
+    "German": "de",
+    "Deutsch": "de",
+    "French": "fr",
+    "Korean": "ko",
+    "Spanish": "es",
+    "Espanol": "es",
+	"Esperanto": "eo"
 }
 
-intro_options = [
-    "Hi, I'm Sarah and I'm here to help you",
+IntroOptions = [
+    "Hi, I'm {} and I'm here to help you".format(MainName),
     "Hi there, What can I do for you?",
-    "Hello, I'm here to help you"
+    "Hello, I'm here to help you",
+    "Hi, My Name is {}, How can I help you".format(MainName)
 ]
+
