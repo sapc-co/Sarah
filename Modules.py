@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """ 
 This is the Modeles for the the main file of Sarah
 #TODO: This Doctype needs changes
@@ -10,8 +11,10 @@ from webbrowser import open_new_tab as ont
 from bs4 import BeautifulSoup as bs
 from emoji import emojize
 import requests 
+import wikipedia
 
-class STranslator:
+
+class STranslator():
     def Translate(Content, Dest) :
         translator = Translator()
         try :
@@ -25,7 +28,7 @@ class STranslator:
             return ("Ooops connection failed \nMaybe you need to check your network connection") 
 
 
-class SWebscraper:
+class SWebscraper():
     def Piratebay(asked):
         url = "https://247tpb.club/s/?q={}&page=0&orderby=99".format(asked)
         try :
@@ -51,6 +54,19 @@ class SWebscraper:
         except :
             return ("Ooops connection failed \nMaybe you need to check your network connection")
 
+class SWikipedia:
+    def Wikipedia(Subject):
+        return wikipedia.summary(Subject)
+    
+    def Compliter(Subject):
+        return ("""Acording To Wikipedia,
+{}
+
+Type More to see the whole article """.format(Subject))
+
+    def GetURL(Subject):
+        return wikipedia.page(Subject).url
+        
 class SEmoji():
     def Emoji(emoname):
         if emoname == "fuck":
