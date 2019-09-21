@@ -32,3 +32,14 @@ IntroOptions = [
     "Hi, My Name is {}, How can I help you".format(MainName)
 ]
 
+YES = [
+    "Yes"
+    "yes"
+    "YES"
+    "Yup"
+    "YUP"
+    "yup"
+    "yeah"
+    "YEAH"
+    "Yeah"
+]
