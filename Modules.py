@@ -59,10 +59,7 @@ class SWikipedia:
         return wikipedia.summary(Subject)
     
     def Compliter(Subject):
-        return ("""Acording To Wikipedia,
-{}
-
-Type More to see the whole article """.format(Subject))
+        return ("""Acording To Wikipedia,\n{}""".format(Subject))
 
     def GetURL(Subject):
         return wikipedia.page(Subject).url
