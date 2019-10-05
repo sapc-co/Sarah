@@ -33,13 +33,13 @@ IntroOptions = [
 ]
 
 YES = [
-    "Yes"
-    "yes"
-    "YES"
-    "Yup"
-    "YUP"
-    "yup"
-    "yeah"
-    "YEAH"
+    "Yes",
+    "yes",
+    "YES",
+    "Yup",
+    "YUP",
+    "yup",
+    "yeah",
+    "YEAH",
     "Yeah"
 ]
