@@ -24,8 +24,10 @@ class STranslator():
                     return (translation.origin + " -> " + translation.text[::-1])                                                                                   
             else :
                 return (translation.origin + " -> " + translation.text)
+        except(ValueError) :
+            return ("Ooops, Couldn't recognize that language")
         except :
-            return ("Ooops connection failed \nMaybe you need to check your network connection") 
+            return ("Ooops, Connection failed \nMaybe you need to check your network connection") 
 
 
 class SWebscraper():
