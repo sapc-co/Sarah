@@ -31,13 +31,12 @@ try :
                         Dest = langs[lang]
             print(STranslator.Translate(Content, Dest))
         #---
-        elif 
-        #---
         else :
             try:
                 print(SWikipedia.Compliter(SWikipedia.Wikipedia(inp)))
                 Morecheck = input("Type More to see the whole article ")
                 if ("More" in Morecheck) or ("more" in Morecheck) or ("MORE" in Morecheck) :
+                    print("Opening Browser ...")
                     ont(SWikipedia.GetURL(inp))
             except:
                 print("I'm sorry I didn't understand what did you mean, and I couldn't find any match for in Wikipeia\
