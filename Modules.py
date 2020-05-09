@@ -4,15 +4,21 @@ This is the Modeles for the the main file of Sarah
 #TODO: This Doctype needs changes
 """ 
 
-#imports :
+#Packages and Libraries :
+import sys, 
+import os
+import time
+import requests
+import wikipedia
+###
 from googletrans import Translator
 from Data import *
+from Setting import *
 from webbrowser import open_new_tab as ont
 from bs4 import BeautifulSoup as bs
 from emoji import emojize
-import requests 
-import wikipedia
-
+from gtts import gTTS
+from playsound import playsound
 
 class STranslator():
     def Translate(Content, Dest) :
@@ -20,10 +26,8 @@ class STranslator():
         try :
             translations = translator.translate([Content], src="auto", dest=Dest)
             for translation in translations :
-                if Dest == "fa" or Dest == "ar" :           
-                    return (translation.origin + " -> " + translation.text[::-1])                                                                                   
-            else :
-                return (translation.origin + " -> " + translation.text)
+                return [0, translation.origin, translation.text]
+                #("{}, will be, {}").format(translation.origin, translation.text)
         except(ValueError) :
             return ("Ooops, Couldn't recognize that language")
         except :
@@ -65,7 +69,44 @@ class SWikipedia:
 
     def GetURL(Subject):
         return wikipedia.page(Subject).url
-        
+<<<<<<< HEAD
+
+
+class Stts():
+    def say(txt):
+        if SpeakingAbbility == "on" :
+            try :
+                tts = gTTS(text=txt, lang='en')
+                tts.save("good.mp3")
+                playsound('good.mp3')
+            except :
+                print("Ooops connection failed \nWhen you're offline, You can't hear my voice")
+        elif SpeakingAbbility == "off" :
+            pass
+        else : 
+            pass
+
+    def write(txt): #Slow Typing function
+        if WritingAbbility == "on" :
+            """for Char in txt + '\n':
+                sys.stdout.write(Char)
+                sys.stdout.flush()
+                time.sleep(0.09)"""
+            print(txt)
+        elif WritingAbbility == "off" :
+            pass
+        else : 
+            pass
+
+
+def sayandwrite(txt):
+    Stts.say(txt)
+    Stts.write(txt)
+
+class SShorter(): #TODO coplete this class
+    def Short(url):
+        return(url)
+
 class SEmoji():
     def Emoji(emoname):
         if emoname == "fuck":
